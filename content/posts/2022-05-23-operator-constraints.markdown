@@ -64,7 +64,7 @@ The main advantage of this is that it works directly with predeclared types and
 simple types like `time.Duration`. It also is very clear.
 
 The main disadvantage is that it does not allow composite types like `struct`s.
-And what if a user want a different sorting order than the one implied by `<`?
+And what if a user wants a different sorting order than the one implied by `<`?
 For example if they want to reverse the order or want specialized string
 collation. A multimedia library might want to sort “The Expanse” under E. And
 some letters sort differently depending on the language setting.
@@ -80,7 +80,7 @@ We can write that constraint like this:
 
 ```go
 type Lesser[T any] interface {
-  // Less returns if the receiver is less than v.
+  // Less returns true if the receiver is less than v.
   Less(v T) bool
 }
 ```
